@@ -32,13 +32,13 @@ section {
 
 section div#container {
 	background-color: rgba(193, 138, 238, 0.85);
-	height: 90vh;
-	width: 95vw;
+	height: 700px;
+	width: 430px;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-	padding: 5px 10px;
+	justify-content: space-between;
+	padding: 20px;
 	box-sizing: border-box;
 }
 
@@ -60,14 +60,14 @@ section div#query {
 	scrollbar-width: thin;
 }
 
-section div#button-section {
+div#button-section {
 	/* background-color: red; */
 	height: 80%;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, 90px);
-	grid-template-rows: repeat(5, 100px);
-	grid-gap: 5px;
+	grid-template-columns: repeat(4, 0.5fr);
+	grid-template-rows: repeat(5, 0.5fr);
+	gap: 5px;
 	grid-template-areas:
 		"clear del divide time"
 		"seven eight nine min"
@@ -102,4 +102,10 @@ button.button {
 button.button:hover {
 	cursor: pointer;
 	background-color: rgb(192, 192, 192);
+}
+
+@media only screen and (max-width: 576px) {
+	section div#container {
+		width: 350px;
+	}
 }
