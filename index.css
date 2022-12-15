@@ -37,7 +37,7 @@ section div#container {
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	padding: 20px;
 	box-sizing: border-box;
 }
@@ -62,18 +62,27 @@ section div#query {
 
 div#button-section {
 	/* background-color: red; */
-	height: 80%;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, 0.5fr);
-	grid-template-rows: repeat(5, 0.5fr);
+	grid-template-columns: repeat(4, 90px);
+	grid-template-rows: repeat(5, 80px) 50px;
 	gap: 5px;
+	justify-content: center;
 	grid-template-areas:
 		"clear del divide time"
 		"seven eight nine min"
 		"four five six plus"
 		"one two three equal"
-		"zero zero comma equal";
+		"zero zero comma equal"
+		"buka buka tutup tutup";
+}
+
+button.button.buka {
+	grid-area: buka;
+}
+
+button.button.tutup {
+	grid-area: tutup;
 }
 
 button.button.equal {
@@ -106,6 +115,10 @@ button.button:hover {
 
 @media only screen and (max-width: 576px) {
 	section div#container {
+		height: 85%;
 		width: 350px;
+	}
+	div#button-section {
+		grid-template-columns: repeat(4, 75px);
 	}
 }
