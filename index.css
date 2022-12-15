@@ -3,24 +3,21 @@
 	padding: 0;
 }
 
-/* width */
 ::-webkit-scrollbar {
 	height: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
 	border-radius: 10px;
 	box-shadow: 0 0 2px 1px #8758b4 inset;
+	background-color: rgba(230, 230, 230, 1);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background: #8758b4;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #553770;
 }
@@ -46,7 +43,7 @@ section div#container {
 }
 
 section div#query {
-	/* border: 2px black; */
+	/* border: 2px solid black; */
 	width: 100%;
 	height: 15%;
 	border-radius: 30px;
@@ -59,10 +56,50 @@ section div#query {
 	align-items: center;
 	flex-direction: row-reverse;
 	overflow-x: auto;
+	scrollbar-color: #8758b4 rgba(230, 230, 230, 1);
+	scrollbar-width: thin;
 }
 
 section div#button-section {
-	background-color: red;
+	/* background-color: red; */
 	height: 80%;
 	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 90px);
+	grid-template-rows: repeat(5, 100px);
+	grid-gap: 5px;
+	grid-template-areas:
+		"clear del divide time"
+		"seven eight nine min"
+		"four five six plus"
+		"one two three equal"
+		"zero zero comma equal";
+}
+
+button.button.equal {
+	grid-area: equal;
+}
+
+button.button.zero {
+	grid-area: zero;
+}
+
+button.operation {
+	background-color: #553770 !important;
+	color: rgba(230, 230, 230, 1);
+}
+
+button.operation:hover {
+	background-color: #7c49a8 !important;
+}
+
+button.button {
+	background-color: rgba(230, 230, 230, 1);
+	border-radius: 15px;
+	border: none;
+}
+
+button.button:hover {
+	cursor: pointer;
+	background-color: rgb(192, 192, 192);
 }
